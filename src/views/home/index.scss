@@ -1,0 +1,15 @@
+@import '../../theme.scss';
+.home{
+    .card{
+        border: 1px solid transparent;
+    }
+    .card:hover{
+        border-color: $primary
+    }
+    .times{
+        cursor: pointer;
+        p:hover:not(.primary){
+            color: $gray
+        }
+    }
+}

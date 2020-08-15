@@ -1,0 +1,455 @@
+@import './theme.scss';
+//reset
+*{
+    box-sizing: border-box;
+  }
+  body{
+    font-family: "Microsoft YaHei UI";
+    font-size: 14px;
+    color: $text;
+    line-height: 1.5;
+    background: $background-default;
+  }
+  
+  a {
+    text-decoration-line: none;
+    color: inherit;
+  }
+  input,body, p, button, textarea, ul, li, ol, dt, dl, dd, h1, h2, h3, h4, h5, h6, p, figure{
+    margin: 0;
+    padding: 0;
+  }
+  input, textarea{font-size: 14px; color: $text}
+  li{list-style: none}
+  //::-webkit-scrollbar {
+  //  display: none;
+  //}
+  // img, svg{
+  //   vertical-align: middle;
+  // }
+  
+  //颜色
+  .primary{color: $primary} // 主题色
+  .primary-light{color: $primary-light} // 主题色-浅色
+  .primary-dark{color: $primary-dark;}
+  .error{color: $error;}
+  .success{ color: $success }
+  .warning{ color: $warning }
+  .warning {color: $warning; }
+  .black{ color: $title; }
+  .gray{color: $gray;}
+  .disabled { color: $gray-light}
+  .white{color: white}
+  
+  .bg-primary{background: $background-primary;}
+  .bg-primary-light{background: $primary-light;}
+  .bg-df{ background: $background-default }
+  .bg-white{ background: #fff }
+  .bg-warning{background: $warning}
+  .bg-success{ background-color: $success}
+  .bg-error{background-color: $error;}
+  
+  //常用容器
+  .box{
+    padding: $x2;
+    background: $background-primary;
+  }
+  .box-l{
+    padding: $x4;
+    background: $background-primary;
+  }
+  .box-s{
+    padding: 12px $x2;
+    background: $background-primary;
+  }
+  
+  //填充
+  .res{
+    width: 100%;
+  }
+  .fill-v{
+    min-height: 100vh;
+  }
+  .fill{
+    width: 100%;
+    height: 100%;
+  }
+  // 定位
+  .relative { position: relative; }
+  .sticky{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 400;
+  }
+  //模态框
+  .modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+  }
+  //绝对居中定位
+  .vertical-c{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+  }
+  //浮动
+  .float-l{
+    float: right;
+  }
+  .float-r{
+    float: right;
+  }
+  .clear{
+    clear: both;
+  }
+  .block{display: block !important;
+  }
+  
+  //弹性布局
+  /* 弹性布局 */
+  
+  //纵向布局
+  .flex-col{flex-direction: column;}
+  //横向翻转布局
+  .flex-row-r{
+    flex-direction: row-reverse;
+  }
+  /*两边对齐弹性布局*/
+  .flex-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /*间隔相等弹性布局*/
+  .flex-around{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  /*水平居中*/
+  .flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /*弹性布局从头排*/
+  .flex-start{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  /*弹性布局从尾排*/
+  .flex-end{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  /*弹性布局项目缩放*/
+  .flex-grow{  flex-grow: 1; }
+  .flex-shrink{  flex-shrink: 0; }
+  /*弹性布局换行*/
+  .flex-wrap{flex-wrap:wrap;}
+  /*弹性布局文字不换行，溢出显示...*/
+  .flex-1{flex: 1; overflow: hidden}
+  //项目顶部对齐
+  .align-start{align-self: flex-start}
+  //项目尾部对齐
+  .align-end{align-self: flex-end}
+  
+  //字体对齐
+  .text-c{text-align: center;}
+  .text-l{text-align: left;}
+  .text-r{text-align: right;}
+  
+  .font-l{font-size: 16px;}
+  .font-n{font-size: 14px;}
+  .font-s{font-size: 12px;}
+  .bold{font-weight: bold}
+  
+  /*文字不换行 - 溢出显示...*/
+  //1行
+  .text-nowrap-1{
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  //2行溢出显示...
+  .text-nowrap-2 {
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  //0.5x边框
+  .bd{
+    border: 1px solid $border;
+    &.round:after{ // 圆角
+      border-radius: 16px;
+    }
+    &.dashed{
+      border-style: dashed;
+    }
+  }
+  .bd-t{
+    border-top: 1px solid $border;
+    &.dashed{
+      border-top-style: dashed;
+    }
+  }
+  .bd-b{
+    border-bottom: 1px solid $border;
+    &.dashed{
+      border-bottom-style: dashed;
+    }
+  }
+  .bd-v{ // 上下边框
+    border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
+    &.dashed{
+      border-top-style: dashed;
+      border-bottom-style: dashed;
+    }
+  }
+  .bd-l{
+    border-left: 1px solid $border;
+    &.dashed{
+      border-left-style: dashed;
+    }
+  }
+  .bd-r{
+    border-right: 1px solid $border;
+    &.dashed{
+      border-right-style: dashed;
+    }
+  }
+  .bd, .bd-t, .bd-b, .bd-l, .bd-r{
+    &.bd-primary{
+      border-color: $primary;
+    }
+  }
+  
+  // 阴影
+  .shadow{
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.12);
+  }
+  
+  .m-x{margin: $x;}
+  .m-1x{margin: $x1;}
+  .m-2x{margin: $x2;}
+  .m-3x{margin: $x3;}
+  .m-4x{margin: $x4;}
+  .mv-x{margin: $x 0;}
+  .mv-1x{margin: $x1 0;}
+  .mv-2x{margin: $x2 0;}
+  .mv-3x{margin: $x3 0;}
+  .mv-4x{margin: $x4 0;}
+  .mh-x{margin: 0 $x;}
+  .mh-1x{margin: 0 $x1;}
+  .mh-2x{margin: 0 $x2;}
+  .mh-3x{margin: 0 $x3;}
+  .mh-4x{margin: 0 $x4;}
+  .mt-x{margin-top: $x;}
+  .mt-1x{margin-top: $x1;}
+  .mt-2x{margin-top: $x2;}
+  .mt-3x{margin-top: $x3;}
+  .mt-4x{margin-top: $x4;}
+  .mr-x{margin-right: $x;}
+  .mr-1x{margin-right: $x1;}
+  .mr-2x{margin-right: $x2;}
+  .mr-3x{margin-right: $x3;}
+  .mr-4x{margin-right: $x4;}
+  .mb-x{margin-bottom: $x;}
+  .mb-1x{margin-bottom: $x1;}
+  .mb-2x{margin-bottom: $x2;}
+  .mb-3x{margin-bottom: $x3;}
+  .mb-4x{margin-bottom: $x4;}
+  .ml-x{margin-left: $x;}
+  .ml-1x{margin-left: $x1;}
+  .ml-2x{margin-left: $x2;}
+  .ml-3x{margin-left: $x3;}
+  .ml-4x{margin-left: $x4;}
+  .m-0{ margin: 0 !important;}
+  .m-auto{ margin: 0 auto !important;}
+  
+  .p-x{padding: $x;}
+  .p-1x{padding: $x1;}
+  .p-2x{padding: $x2;}
+  .p-3x{padding: $x3;}
+  .p-4x{padding: $x4;}
+  .pv-x{padding: $x 0;}
+  .pv-1x{padding: $x1 0;}
+  .pv-2x{padding: $x2 0;}
+  .pv-3x{padding: $x3 0;}
+  .pv-4x{padding: $x4 0;}
+  .ph-x{padding: 0 $x;}
+  .ph-1x{padding: 0 $x1;}
+  .ph-2x{padding: 0 $x2;}
+  .ph-3x{padding: 0 $x3;}
+  .ph-4x{padding: 0 $x4;}
+  .pt-x{padding-top: $x;}
+  .pt-1x{padding-top: $x1;}
+  .pt-2x{padding-top: $x2;}
+  .pt-3x{padding-top: $x3;}
+  .pt-4x{padding-top: $x4;}
+  .pr-x{padding-right: $x;}
+  .pr-1x{padding-right: $x1;}
+  .pr-2x{padding-right: $x2;}
+  .pr-3x{padding-right: $x3;}
+  .pr-4x{padding-right: $x4;}
+  .pb-x{padding-bottom: $x;}
+  .pb-1x{padding-bottom: $x1;}
+  .pb-2x{padding-bottom: $x2;}
+  .pb-3x{padding-bottom: $x3;}
+  .pb-4x{padding-bottom: $x4;}
+  .pl-x{padding-left: $x;}
+  .pl-1x{padding-left: $x1;}
+  .pl-2x{padding-left: $x2;}
+  .pl-3x{padding-left: $x3;}
+  .pl-4x{padding-left: $x4;}
+  .p-0 { padding: 0 !important; }
+  
+  //列表
+  .list{
+    @extend .bd-v;
+    @extend .pl-2x;
+    background: #fff;
+    //包含左边padding
+    &.no-pd{
+      padding: 0;
+      .item{
+        padding-left: 16px
+      }
+    }
+    //不包含边框分隔
+    &.no-bd{
+      .item{
+        border: none
+      }
+    }
+    .item{
+      padding: 14px 16px 14px 0;
+      @extend .bd-b;
+      &.no-pt{
+        padding-top:0;
+      }
+      &:last-child{
+        border: none;
+      }
+    }
+  }
+  //卡片
+  .card{
+    @extend .box;
+    @extend .shadow;
+    border-radius: 8px;
+  }
+  //卡片s
+  .cards{
+    @extend .box;
+    margin: $x2;
+    @extend .shadow;
+    border-radius: 8px;
+  }
+  
+  //头像
+  .avatar{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    overflow: hidden;
+    &.square{
+      border-radius: 8px;
+    }
+    @extend .bg-df;
+    &.large{
+      width: 65px;
+      height: 65px;
+    }
+  
+    &.small{
+      width: 45px;
+      height: 45px;
+    }
+    &.bd-round{
+      border:1px solid $success;
+    }
+  }
+  
+  //图标
+  .icon{
+    width: 22px;
+    height: 22px;
+    margin-right: $x1;
+    &.large{
+      width: 26px;
+      height: 26px;
+    }
+    &.small{
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
+  //按钮
+  //固定在底部的按钮
+  .btn-bottom{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    &:before{
+      box-sizing: border-box;
+      display: block;
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-top: 1px solid $border;
+      transform: scaleY(0.5);
+    }
+  }
+  .has-btn-bottom{
+    padding-bottom: 50px;
+  }
+  
+  .badge{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 4px;
+    min-width: 18px;
+    max-width: 42px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 12px;
+    border-radius: 12px;
+    color: #fff;
+    background: var(--error);
+    @extend .text-nowrap-1;
+    &.static{
+      position: static;
+    }
+  }
+  //暂无数据
+  .empty{
+    @extend .p-2x;
+    @extend .text-c;
+    @extend .gray
+  }
+  

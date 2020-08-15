@@ -1,0 +1,25 @@
+/**************************** 公共样式 ********************************************/
+// 主题颜色
+// color variables
+$primary: #2d8cf0;
+$primary-light: #5cadff;
+$primary-dark: #2b85e4;
+$success: #07c160;
+$error: #ed4014;
+$warning: #ff9900;
+$title: #17233d;
+$white: #fff;
+//$warning-
+$text: rgba(255, 255, 255, 0.65);
+$gray: #9999aa;
+$gray-light: #c5c8ce;
+$border: rgba(255, 255, 255, 0.12);
+$background-default: #f8f8f9;
+$background-primary: #1F1F1F;
+
+//边距
+$x1: 8px;
+$x: $x1 / 2; // 4px
+$x2: 2 * $x1;
+$x3: 3 * $x1;
+$x4: 4 * $x1;
