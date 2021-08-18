@@ -6,7 +6,9 @@ import 'antd/dist/antd.dark.css'; // 暗黑主题
 import './App.scss';
 import Routers from './routers.js'
 import * as serviceWorker from './serviceWorker';
-console.log(Routers);
+let abc = 2
+console.log(Routers, 2);
+console.log(3);
 
 ReactDOM.render(
   // 严格模式
